@@ -14,6 +14,27 @@ public class Conta {
     private String nome;
     private float saldo, limite;
     
+    //Methods
+    /**
+     * Transfere um valor para uma conta de destino
+     * @param conta - Conta que recebe o dinheiro
+     * @param valor - Valor a ser transferido
+     * @return True - A transferencia foi efetuada com sucesso <br>
+     *         False - Saldo insuficiente
+     */
+    public boolean transferir(Conta conta, float valor) {
+        if(this.saldo < valor) {
+            return false; //Saldo insuficiente
+        } else {
+            //retira o valor da conta
+            this.setSaldo(getSaldo() - valor);
+            
+            //faz o deposito na outra conta
+            conta.setSaldo(conta.getSaldo() + valor);
+            return true;
+        }
+    }
+    
     //Getters
     public float getLimite() {
         return limite;
@@ -47,6 +68,4 @@ public class Conta {
     public void setSaldo(float saldo) {
         this.saldo = saldo;
     }
-    
-    
 }
