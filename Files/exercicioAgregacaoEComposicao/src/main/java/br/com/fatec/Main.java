@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         String nomeConsole, nomeFabricante, nomeJogo;
-        int anoLancamento;
+        int anoLancamento, qtdJogadores;
         boolean jogoOnline;
 
         Scanner scanner = new Scanner(System.in);
@@ -20,12 +20,14 @@ public class Main {
         System.out.print("Digite o nome do jogo: ");
         nomeJogo = scanner.nextLine();
         System.out.print("Digite a quantidade de Jogadores: ");
-        int qtdJogadores = scanner.nextInt();
+        qtdJogadores = scanner.nextInt();
         scanner.nextLine();
         System.out.print("O jogo é online? (true/false): ");
         jogoOnline = scanner.nextBoolean();
 
-        Console console = new Console(nomeConsole, anoLancamento, new Fabricante());
+        Fabricante fabricante = new Fabricante();
+
+        Console console = new Console(nomeConsole, anoLancamento, fabricante);
         console.getFabricante().setNome(nomeFabricante);
 
         System.out.println("\n");
@@ -35,9 +37,11 @@ public class Main {
         jogo.setQtdJogadores(qtdJogadores);
         jogo.setOnline(jogoOnline);
 
-        System.out.println("Nome do jogo: " + jogo.getNome());
-        System.out.println("Quantidade de jogadores: " + jogo.getQtdJogadores());
-        if (jogo.isOnline()) {
+        console.setJogo(jogo);
+
+        System.out.println("Nome do jogo: " + console.getJogo().getNome());
+        System.out.println("Quantidade de jogadores: " + console.getJogo().getQtdJogadores());
+        if (console.getJogo().isOnline()) {
             System.out.println("Online: Sim");
         } else {
             System.out.println("Online: Não");
