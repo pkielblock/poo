@@ -12,15 +12,15 @@ import java.util.Vector;
 public class Main {
     public static void main(String[] args) {
         //chamando os exemplos
-        Exemplo_List(); //LIST - Baseado em Arrays
-        
-        //Exemplo_Set(); //SET - Baseado em Ponteiro
+        //Exemplo_List(); //LIST - Baseado em Arrays
+
+        Exemplo_Set(); //SET - Baseado em Ponteiro | SET (Conjunto) nao tem referencia a posicao.
     }
-    
+
     public static void Exemplo_List() {
         //Coleção de String
         Vector nomes = new Vector();
-        
+
         //adicionando dados
         nomes.add("João");
         nomes.add("Pedro");
@@ -29,27 +29,27 @@ public class Main {
         nomes.add("Pedro"); //aceita duplicados
         nomes.add(100);
         nomes.add(10.87);
-        
+
         //quantos elementos existem
         System.out.println("Total inserido: " +
                 nomes.size());
-        
+
         //exibindo alguns dados
         System.out.println("Elemento 2:" + nomes.get(2));
         System.out.println("Elemento 1:" + nomes.elementAt(1));
-        
+
         //removendo um elemento
         nomes.remove(0);
         nomes.removeElement("Ana");
-        if(nomes.remove("Antonio") == false) {
+        if(!nomes.remove("Antonio")) {
             System.out.println("Antonio não Removido");
         }
         else {
             System.out.println("Antonio Removido");
         }
-        
+
         System.out.println("Qtd Elementos atual: " + nomes.size());
-        
+
         //listando todos os elementos
         //usando for normal (só funciona para LIST)
         System.out.println("Listando");
@@ -64,7 +64,7 @@ public class Main {
         nomes.forEach(aux -> {
             System.out.println("Nome: " + aux);
         });
-        
+
         //usando ITERADORES
         System.out.println("Listando_3");
         Iterator it = nomes.iterator(); //cria um obj iterador
@@ -79,9 +79,9 @@ public class Main {
             System.out.println("Nome: " + aux);
         });
     }
-    
+
     public static void Exemplo_Set(){
-        /*
+
         //Coleção de String
         HashSet nomes = new HashSet();
         
@@ -101,15 +101,18 @@ public class Main {
         /**
          * NÃO É POSSÍVEL ACESSAR UM ELEMENTO
          * ESPECÍFICO
-         * //exibindo alguns dados
+         * //por exemplo, exibindo alguns dados
          * System.out.println("Elemento 2:" + nomes.get(2));
          * System.out.println("Elemento 1:" + nomes.elementAt(1));
          */
-        /*
+
         //removendo um elemento
-        nomes.remove(0);
-        nomes.removeElement("Ana");
-        if(nomes.remove("Antonio") == false) {
+        nomes.remove(0); //Procura o objeto (elemento) cujo conteudo é zero, como nao existe ninguem com zero, nao remove nada
+
+        //Esse metodo nao existe em SET
+        //nomes.removeElement("Ana");
+
+        if(!nomes.remove("Antonio")) {
             System.out.println("Antonio não Removido");
         }
         else {
@@ -120,19 +123,18 @@ public class Main {
         
         //listando todos os elementos
         //usando for normal (só funciona para LIST)
+        /*
         System.out.println("Listando");
         for(int i=0; i < nomes.size(); i++) {
-            System.out.println("Nome: " + nomes.get(i));
+            System.out.println("Nome: " + nomes.get(i)); não tenho acesso aos indices de um SET, portanto nao funciona.
         }
+        */
         
         //usando foreach (enhanced for)
         System.out.println("Listando_2");
         for (Object aux : nomes) {
             System.out.println("Nome: " + aux);
         }
-        nomes.forEach(aux -> {
-            System.out.println("Nome: " + aux);
-        });
         
         //usando ITERADORES
         System.out.println("Listando_3");
@@ -147,6 +149,5 @@ public class Main {
         nomes.forEach(aux -> {
             System.out.println("Nome: " + aux);
         });
-    */
     }
 }
