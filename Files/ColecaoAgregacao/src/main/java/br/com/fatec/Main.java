@@ -59,6 +59,7 @@ public class Main {
         System.out.println("\nParticipantes do projeto:");
         for (Participante p : prj.getParticipantes()) {
             System.out.println("Registro: " + p.getRegistro() + " - Nome: " + p.getNome());
+            System.out.println("==================================");
         }
     }
 }
