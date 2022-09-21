@@ -52,8 +52,13 @@ public class Main {
         if(aux == null) 
             System.out.println("Participante não existe");
         else {
-            System.out.println("Nome do excluido: " +
-                    aux.getNome());
+            System.out.println("Nome do excluido: " + aux.getNome());
+        }
+
+        //Listando os participantes
+        System.out.println("\nParticipantes do projeto:");
+        for (Participante p : prj.getParticipantes()) {
+            System.out.println("Registro: " + p.getRegistro() + " - Nome: " + p.getNome());
         }
     }
 }
