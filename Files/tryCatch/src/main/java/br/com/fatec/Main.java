@@ -1,11 +1,33 @@
 package br.com.fatec;
 
+import br.com.fatec.exceptions.CPFException;
+
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        trataExcecaoDeClasses();
+    }
+
+    private static void trataExcecaoDeClasses() {
+        Pessoa p = new Pessoa();
+
+        //Atribuindo Dados
+        p.setNome("Carlos da Silva");
+
+        //Tratando Exceção
+        try {
+            p.setCpf("123.456.789-000");
+            p.setIdade(44);
+        } catch (IOException | CPFException e) {
+            System.out.println("Erro: " + e.getMessage());
+        }
+    }
+
+    private static void trataExcecao() {
         Scanner sc = new Scanner(System.in);
 
         int numero = 0;
