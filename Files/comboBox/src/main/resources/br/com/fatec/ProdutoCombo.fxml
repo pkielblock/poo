@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="190.0" prefWidth="410.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fatec.controllers.ProductsComboController">
+    <stylesheets>
+        <URL value="@br/com/fatec/css/ProdutoCombo.css" />
+    </stylesheets>
+   <children>
+      <GridPane fx:id="gdDados" layoutX="14.0" layoutY="14.0" prefHeight="123.0" prefWidth="373.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="182.0" minWidth="10.0" prefWidth="77.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="296.0" minWidth="10.0" prefWidth="296.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="lblCodigo" text="Código" />
+            <Label fx:id="lblDescricao" text="Descrição" GridPane.rowIndex="1" />
+            <Label fx:id="lblValor" text="Valor" GridPane.rowIndex="2" />
+            <TextField fx:id="txtCodigo" maxWidth="-Infinity" prefHeight="25.0" prefWidth="80.0" GridPane.columnIndex="1" />
+            <TextField fx:id="txtDescricao" maxWidth="-Infinity" prefHeight="25.0" prefWidth="295.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtValor" maxWidth="-Infinity" prefHeight="25.0" prefWidth="105.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <ComboBox fx:id="cbProdutos" prefHeight="25.0" prefWidth="295.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+      <HBox fx:id="hbBotoes" alignment="CENTER" layoutX="14.0" layoutY="150.0" prefHeight="25.0" prefWidth="373.0" spacing="30.0">
+         <children>
+            <Button fx:id="btnInserir" mnemonicParsing="false" onAction="#btnInserir_Click" text="Inserir" />
+            <Button fx:id="btnMostrar" mnemonicParsing="false" onAction="#btnMostrar_Click" text="Mostrar">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+            <CheckBox fx:id="chkDuplicados" mnemonicParsing="false" text="Duplicados" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
