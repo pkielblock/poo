@@ -1,0 +1,12 @@
+br\com\fatec\App.class
+br\com\fatec\controllers\ViewProprietarioController$1.class
+br\com\fatec\controllers\ViewComboController.class
+br\com\fatec\model\Veiculo.class
+br\com\fatec\DAO\PassageiroDAO.class
+br\com\fatec\DAO\ProprietarioDAO.class
+br\com\fatec\model\Passageiro.class
+br\com\fatec\DAO\VeiculoDAO.class
+br\com\fatec\persistencia\Banco.class
+br\com\fatec\DAO\DAO.class
+br\com\fatec\model\Proprietario.class
+br\com\fatec\controllers\ViewProprietarioController.class

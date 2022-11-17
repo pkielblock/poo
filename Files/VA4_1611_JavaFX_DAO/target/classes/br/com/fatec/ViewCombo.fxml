@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="105.0" prefWidth="580.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="br.com.fatec.controllers.ViewComboController">
+   <children>
+      <TextField fx:id="txtCodigo" layoutX="62.0" layoutY="39.0" prefHeight="31.0" prefWidth="65.0" />
+      <ComboBox fx:id="cbProprietario" layoutX="148.0" layoutY="39.0" prefHeight="31.0" prefWidth="395.0" />
+   </children>
+</AnchorPane>
